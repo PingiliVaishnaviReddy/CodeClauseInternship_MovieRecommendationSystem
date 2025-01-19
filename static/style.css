@@ -1,0 +1,86 @@
+/* Basic styling */
+body {
+    font-family: Arial, sans-serif;
+    background-image: url("http://127.0.0.1:5000/static/movies.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #333;
+    padding: 20px;
+    margin: 0;
+}
+
+/* Container styling */
+.container {
+    max-width: 800px;
+    margin: auto;
+    background-color: rgba(255, 255, 255, 0.8); /* Transparent white */
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px; /* Rounded corners */
+}
+
+/* Title */
+.title {
+    text-align: center;
+    color: black; /* Tomato Red */
+    font-size: 36px;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4); /* Text shadow effect */
+}
+
+/* Genre selection */
+.genre-selection {
+    font-size: 18px;
+    color: #4CAF50; /* Light Green */
+    font-weight: bold;
+}
+
+/* Movie details styling */
+.movie-details {
+    background-color: #FFF0F5; /* Light pink background */
+    border-radius: 8px;
+    padding: 10px;
+    margin: 10px 0;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.movie-details p {
+    font-size: 16px;
+    margin: 5px 0;
+    color: #4B0082; /* Indigo text */
+    font-weight: bold;
+}
+
+/* Highlight Movie Names */
+.movie-details p strong {
+    color: #FF4500; /* Orange Red */
+    font-size: 18px;
+}
+
+/* Rating slider */
+input[type="range"] {
+    width: 100%;
+    margin: 10px 0;
+}
+
+#rating-value {
+    font-weight: bold;
+    color: #20B2AA; /* Light Sea Green */
+}
+
+/* Button */
+.recommend-button {
+    background-color: #FF4500; /* Orange Red */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.recommend-button:hover {
+    background-color: #FF6347; /* Tomato Red */
+}
