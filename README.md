@@ -1,1 +1,1 @@
-# PingiliVaishnaviReddy-CodeClauseInternship_MovieRecommendationSystem
+# CodeClauseInternship_MovieRecommendationSystem
