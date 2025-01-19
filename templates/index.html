@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Recommendation System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Movie Recommendation System</h1>
+
+        <form method="POST">
+            <label for="genre" class="genre-selection">Select Genre(s):</label>
+            <br>
+            <input type="checkbox" name="genre" value="Action"> Action
+            <input type="checkbox" name="genre" value="Drama"> Drama
+            <input type="checkbox" name="genre" value="Thriller"> Thriller
+            <input type="checkbox" name="genre" value="Comedy"> Comedy
+            <input type="checkbox" name="genre" value="Romance"> Romance
+            <input type="checkbox" name="genre" value="Sci-Fi"> Sci-Fi
+            <input type="checkbox" name="genre" value="Fantasy"> Fantasy
+            <input type="checkbox" name="genre" value="Adventure"> Adventure
+            <input type="checkbox" name="genre" value="Crime"> Crime
+            <input type="checkbox" name="genre" value="War"> War
+            <br><br>
+            
+            <label for="rating" class="rating-selection">Select Minimum Rating:</label>
+            <input type="range" name="rating" min="1" max="10" value="1">
+            <span id="rating-value">10</span>
+            <br><br>
+            
+            <button type="submit" class="recommend-button">Get Recommendations</button>
+        </form>
+
+        {% if recommended_movies %}
+            <h2>Recommended Movies</h2>
+            {% for movie in recommended_movies %}
+                <div class="movie-details">
+                    <p><strong>Movie:</strong> {{ movie.Movie }}</p>
+                    <p><strong>Genre:</strong> {{ movie.Genre }}</p>
+                    <p><strong>Rating:</strong> {{ movie.Rating }}</p>
+                    <p><strong>Runtime:</strong> {{ movie.Runtime }} minutes</p>
+                </div>
+                <br>
+            {% endfor %}
+        {% endif %}
+    </div>
+</body>
+</html>
