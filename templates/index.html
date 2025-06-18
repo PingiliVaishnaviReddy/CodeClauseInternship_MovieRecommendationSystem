@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movie Recommendation System</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
@@ -11,25 +10,25 @@
         <h1 class="title">Movie Recommendation System</h1>
 
         <form method="POST">
-            <label for="genre" class="genre-selection">Select Genre(s):</label>
-            <br>
-            <input type="checkbox" name="genre" value="Action"> Action
-            <input type="checkbox" name="genre" value="Drama"> Drama
-            <input type="checkbox" name="genre" value="Thriller"> Thriller
-            <input type="checkbox" name="genre" value="Comedy"> Comedy
-            <input type="checkbox" name="genre" value="Romance"> Romance
-            <input type="checkbox" name="genre" value="Sci-Fi"> Sci-Fi
-            <input type="checkbox" name="genre" value="Fantasy"> Fantasy
-            <input type="checkbox" name="genre" value="Adventure"> Adventure
-            <input type="checkbox" name="genre" value="Crime"> Crime
-            <input type="checkbox" name="genre" value="War"> War
+            <label class="genre-selection">Select Genre(s):</label><br>
+            <div class="genre-options">
+                <label><input type="checkbox" name="genre" value="Action"> Action</label>
+                <label><input type="checkbox" name="genre" value="Drama"> Drama</label>
+                <label><input type="checkbox" name="genre" value="Thriller"> Thriller</label>
+                <label><input type="checkbox" name="genre" value="Comedy"> Comedy</label>
+                <label><input type="checkbox" name="genre" value="Romance"> Romance</label>
+                <label><input type="checkbox" name="genre" value="Sci-Fi"> Sci-Fi</label>
+                <label><input type="checkbox" name="genre" value="Fantasy"> Fantasy</label>
+                <label><input type="checkbox" name="genre" value="Adventure"> Adventure</label>
+                <label><input type="checkbox" name="genre" value="Crime"> Crime</label>
+                <label><input type="checkbox" name="genre" value="War"> War</label>
+            </div>
+
+            <label class="rating-selection">Select Minimum Rating:</label>
+            <input type="range" name="rating" id="rating" min="1" max="10" value="5" oninput="ratingValue.innerText = this.value">
+            <span id="rating-value">5</span>
+
             <br><br>
-            
-            <label for="rating" class="rating-selection">Select Minimum Rating:</label>
-            <input type="range" name="rating" min="1" max="10" value="1">
-            <span id="rating-value">10</span>
-            <br><br>
-            
             <button type="submit" class="recommend-button">Get Recommendations</button>
         </form>
 
@@ -42,7 +41,6 @@
                     <p><strong>Rating:</strong> {{ movie.Rating }}</p>
                     <p><strong>Runtime:</strong> {{ movie.Runtime }} minutes</p>
                 </div>
-                <br>
             {% endfor %}
         {% endif %}
     </div>
